@@ -1,4 +1,4 @@
-#define delayTime 599
+#define delayTime 5
 
 #define g1 5 //gate 1 pin
 #define g2 6 //gate 2 pin
@@ -10,7 +10,7 @@
 //low -> clock wise 
 //high -> counter clock wise
 #define cp 2//comunication pin
-
+int incommingByte = 0;
 void setup() {
   pinMode(g1, OUTPUT);
   pinMode(g2, OUTPUT);
@@ -31,34 +31,34 @@ void setup() {
   PORTB = B00000001;
   PORTD = B01000000;
         delay(delayTime);
-  PORTB = B00000001;
-  PORTD = B01000000;
+  PORTB = B00000000;
+  PORTD = B00000000;
         break;
         case 2:
   PORTB = B00000000;
   PORTD = B11000000;
         delay(delayTime);
   PORTB = B00000000;
-  PORTD = B11000000;
+  PORTD = B00000000;
         break;
         case 3:
   PORTB = B00000000;
   PORTD = B10100000;
         delay(delayTime);
   PORTB = B00000000;
-  PORTD = B10100000;
+  PORTD = B00000000;
         break;
         case 4:
   PORTB = B00000001;
   PORTD = B00100000;
         delay(delayTime);
-  PORTB = B00000001;
-  PORTD = B00100000;
+  PORTB = B00000000;
+  PORTD = B00000000;
         break;  
       }
       updated = true;
     }
-    if(digitalRead(msp) == HIGH && locked == false){
+  /*  if(digitalRead(msp) == HIGH && locked == false){
       updated = false;
       locked = true;
       if(digitalRead(crp) == LOW){
@@ -67,15 +67,30 @@ void setup() {
       {
           rotationState--;
       }
+      Serial.println("stepping");
+      Serial.println(rotationState);
+    }else if(digitalRead(msp) == LOW && locked == true){
+      locked = false;
+    }*/
+    if(incommingByte>0){
+      rotationState++;
+      incommingByte--;
+      updated = false;
+    }
+    else if(incommingByte<0){
+      rotationState--;
+      incommingByte++;
+      updated = false;
+    }
       if(rotationState < 1){
         rotationState =4;
       }else if(rotationState >4){
         rotationState =1;
       }
-      Serial.println("stepping");
-      Serial.println(rotationState);
-    }else if(digitalRead(msp) == LOW && locked == true){
-      locked = false;
+   if(Serial.available() > 1 && incommingByte == 0){
+
+     incommingByte = Serial.parseInt();
+      Serial.println(incommingByte);
     }
   }
 }
