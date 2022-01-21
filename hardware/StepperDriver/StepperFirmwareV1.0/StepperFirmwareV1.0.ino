@@ -28,24 +28,32 @@ void setup() {
     if(updated==false){ 
       switch(rotationState){
         case 1:
-        digitalWrite(g1,HIGH);
+  PORTB = B00000001;
+  PORTD = B01000000;
         delay(delayTime);
-        digitalWrite(g1,LOW);
+  PORTB = B00000001;
+  PORTD = B01000000;
         break;
         case 2:
-        digitalWrite(g2,HIGH);
+  PORTB = B00000000;
+  PORTD = B11000000;
         delay(delayTime);
-        digitalWrite(g2,LOW);
+  PORTB = B00000000;
+  PORTD = B11000000;
         break;
         case 3:
-        digitalWrite(g3,HIGH);
+  PORTB = B00000000;
+  PORTD = B10100000;
         delay(delayTime);
-        digitalWrite(g3,LOW);
+  PORTB = B00000000;
+  PORTD = B10100000;
         break;
         case 4:
-        digitalWrite(g4,HIGH);
+  PORTB = B00000001;
+  PORTD = B00100000;
         delay(delayTime);
-        digitalWrite(g4,LOW);
+  PORTB = B00000001;
+  PORTD = B00100000;
         break;  
       }
       updated = true;
