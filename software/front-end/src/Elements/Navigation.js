@@ -1,13 +1,15 @@
 import React from "react";
-
+import {Link} from "react-router-dom";
 class Navigation extends React.Component{
 render(){
  
   return(
     <div className="NavigationClass">
-    <button>Home</button>
-    <button>Home</button>
-    
+    <Link to="/"><button >Home</button></Link> 
+   <Link to="/controls"><button >Controls</button></Link> 
+    <button>Printing</button>
+    <button>Camera</button>
+    <button>Data</button>
     </div>
   );
 }

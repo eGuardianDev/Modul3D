@@ -1,25 +1,36 @@
-import './App.css';
-import Navigation from "./Elements/Navigation"
+
+//libraires
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+
+//css
+import './App.css';
+
+//importing elements
+import Navigation from "./Elements/Navigation";
+import Home from './Elements/Home';
+import Controls from './Elements/Controls';
+
+
 function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      <Navigation  />
+    <style jsx global>{`
+        body {
+          overflow: hidden; /* Hide scrollbars */
+        }
+    `}</style>
+      <Navigation />
       <Switch>
-        
         <Route path="/" exact component={Home}/>
-        <Route path="/whattheprintersees" component={Home}/>
+        <Route path="/controls" component={Controls}/>
+        <Route path="/printing" component={Controls}/>
+        <Route path="/camera" component={Controls}/>
+        <Route path="/data" component={Controls}/>
       </Switch>
     </div>
       </BrowserRouter>
   );
-}
-//p 190 text stone превод
-//p 191 
-//p 46/47 Oral communicaiton translated (ex 4 too)
-const Home = () =>{
-  return <h1>Doge</h1>
 }
 
 export default App;
