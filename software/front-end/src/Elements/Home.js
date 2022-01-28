@@ -1,15 +1,15 @@
-import { isFrozen } from "core-js/core/object";
+import axios from 'axios';
 import React from "react";
 
 class Home extends React.Component {
     constructor(){
         super();
-        this.state = {backend: 0, printing: 0,printingState: 0};
     }
+    state = {backend: false, printing: false,printingState: 0};
     async componentDidMount(){
-         await fetch('http://192.168.0.106:5000')
-        .then(response=>{response.json()})
-        .then(data => this.setState({backend:true,printing: data.printing, printingState: data.printingState}));    
+         axios.get('http://192.168.0.106:5000')
+        .then(response=>{this.setState({backend:true,printing:response.data.printing})})
+        //.then(data => this.setState({backend:true,printing: data.printing, printingState: data.printingState}));    
     }
     render(){
         return(
