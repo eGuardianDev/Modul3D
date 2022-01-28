@@ -5,11 +5,11 @@
 #define g3 7 //gate 3 pin
 #define g4 8 //gate 4 pin
 
-#define msp 4//make step pin
-#define crp 3//choose rotation pin
+#define msp 9//make step pin
+#define crp 10//choose rotation pin
 //low -> clock wise 
 //high -> counter clock wise
-#define cp 2//comunication pin
+#define cp 11//comunication pin
 int incommingByte = 0;
 void setup() {
   pinMode(g1, OUTPUT);
@@ -58,7 +58,7 @@ void setup() {
       }
       updated = true;
     }
-  /*  if(digitalRead(msp) == HIGH && locked == false){
+    if(digitalRead(msp) == HIGH && locked == false){
       updated = false;
       locked = true;
       if(digitalRead(crp) == LOW){
@@ -68,30 +68,15 @@ void setup() {
           rotationState--;
       }
       Serial.println("stepping");
-      Serial.println(rotationState);
     }else if(digitalRead(msp) == LOW && locked == true){
       locked = false;
-    }*/
-    if(incommingByte>0){
-      rotationState++;
-      incommingByte--;
-      updated = false;
-    }
-    else if(incommingByte<0){
-      rotationState--;
-      incommingByte++;
-      updated = false;
     }
       if(rotationState < 1){
         rotationState =4;
       }else if(rotationState >4){
         rotationState =1;
       }
-   if(Serial.available() > 1 && incommingByte == 0){
-
-     incommingByte = Serial.parseInt();
-      Serial.println(incommingByte);
-    }
+      Serial.println(rotationState);
   }
 }
 void loop(){
