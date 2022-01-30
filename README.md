@@ -7,24 +7,24 @@
 
 
 ## To do:
-[] Build the driver
-[] Build main movement and test it
-[] Build second driver
-[] Add first G-code implementations
-[] Add Marker and test some G-code
+[ ] Build the driver
+[ ] Build main movement and test it
+[ ] Build second driver
+[ ] Add first G-code implementations
+[ ] Add Marker and test some G-code
 
 =====
-[] Build 3d Axis
- => [] Build driver
- => [] Build hardware
- => [] Add bed
-[] Build the modules
- => [] Make the first module (Pen module)
- => [] Make the second module (3D-printing module)
- => [] Make the third module (C.N.C module)
-[] Back end
- => [] Implement more G-Code
- => [] Add file upload
-[] Front end
- => [] Add uploading files
- => [] add camera
+[ ] Build 3d Axis
+ => [ ] Build driver
+ => [ ] Build hardware
+ => [ ] Add bed
+[ ] Build the modules
+ => [ ] Make the first module (Pen module)
+ => [ ] Make the second module (3D-printing module)
+ => [ ] Make the third module (C.N.C module)
+[ ] Back end
+ => [ ] Implement more G-Code
+ => [ ] Add file upload
+[ ] Front end
+ => [ ] Add uploading files
+ => [ ] add camera
