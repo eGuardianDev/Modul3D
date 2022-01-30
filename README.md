@@ -22,9 +22,9 @@
  - [ ] Make the first module (Pen module)
  - [ ] Make the second module (3D-printing module)
  - [ ] Make the third module (C.N.C module)
--[ ] Back end
+- [ ] Back end
  - [ ] Implement more G-Code
  - [ ] Add file upload
--[ ] Front end
+- [ ] Front end
  - [ ] Add uploading files
  - [ ] add camera
