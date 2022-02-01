@@ -7,24 +7,35 @@
 
 
 ## To do:
-- [ ] Build the driver
-- [ ] Build main movement and test it
+====
+Phase one -> 2D implementation
+- [ ] Build first driver
+- [ ] Test first driver
+- [ ] Implement server logic
 - [ ] Build second driver
+- [ ] Test second driver
 - [ ] Add first G-code implementations
-- [ ] Add Marker and test some G-code
+- [ ] Add drawing sharpie and test some G-code
 
-=====
+====
+Phase two -> 3D axis implementations
 - [ ] Build 3d Axis
- - [ ] Build driver
- - [ ] Build hardware
- - [ ] Add bed
+  - [ ] Build driver
+  - [ ] Build hardware
+  - [ ] Add bed
+
+====
+Phase three -> Building modules
 - [ ] Build the modules
- - [ ] Make the first module (Pen module)
- - [ ] Make the second module (3D-printing module)
- - [ ] Make the third module (C.N.C module)
+  - [ ] Make the first module (Pen module)
+  - [ ] Make the second module (3D-printing module)
+  - [ ] Make the third module (C.N.C module)
+
+====
+Phase four -> User experience
 - [ ] Back end
- - [ ] Implement more G-Code
- - [ ] Add file upload
+  - [ ] Implement more G-Code
+  - [ ] Add file upload
 - [ ] Front end
- - [ ] Add uploading files
- - [ ] add camera
+  - [ ] Add uploading files
+  - [ ] add camera
