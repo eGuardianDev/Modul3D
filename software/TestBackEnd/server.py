@@ -45,6 +45,6 @@ def post_test():
 
 
 if(__name__ == '__main__'):
- app.run(host="192.168.0.106",debug=True)
-
+ #app.run(host="192.168.0.105",debug=True)
+ app.run()
  
