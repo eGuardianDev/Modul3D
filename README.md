@@ -9,8 +9,8 @@
 ## To do:
 ====
 Phase one -> 2D implementation
-- [ ] Build first driver
-- [ ] Test first driver
+- [X] Build first driver
+- [X] Test first driver
 - [ ] Implement server logic
 - [ ] Build second driver
 - [ ] Test second driver

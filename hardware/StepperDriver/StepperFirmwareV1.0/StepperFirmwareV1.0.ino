@@ -1,7 +1,7 @@
 #define speeed 2
 
 #define SteppingPin 9
-#define RotationPin 10
+#define RotationPin 12
 #define ReadyComPin 11
 void setup() {
   //ALL ON
@@ -33,13 +33,11 @@ void setup() {
     
     if(rotate > 0){
       rotate--;
-      if(digitalRead(RotationPin) == LOW){
+      if ((PINB&(1<<4))){
       state++;
       }else{
         state--;
-      }
-      state++;
-      
+      }     
       unlocked = true;
     }
 
