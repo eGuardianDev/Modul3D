@@ -1,7 +1,7 @@
 #define speeed 2
 
 #define SteppingPin 9
-#define RotationPin 12
+#define RotationPin 10
 #define ReadyComPin 11
 void setup() {
   //ALL ON
@@ -12,8 +12,8 @@ void setup() {
   pinMode(5, OUTPUT); //gate 4
 
   pinMode(SteppingPin, INPUT); //Read Steps
-  pinMode(RotationPin, INPUT);
-  pinMode(ReadyComPin, OUTPUT);
+  pinMode(RotationPin, INPUT); //Read Rotation
+  pinMode(ReadyComPin, OUTPUT);//Tell main driver to be ready
   
   int state = 1; // which step to activate
   int rotate = 100; // beginning steps // to remove

@@ -13,7 +13,7 @@ function makeSteps(_axis,_steps,_rotation){
       "Access-Control-Allow-Origin": "*"
     }
   }
-  axios.post('http://192.168.0.106:5000/post_test', data, config).then(response => console.log(response.data));
+  axios.post('http://127.0.0.1:5000/moveAxis', data, config).then(response => console.log(response.data));
 
 }
 class Controls extends React.Component {
