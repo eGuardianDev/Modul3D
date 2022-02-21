@@ -1,27 +1,32 @@
-#GPIO import
 import time;
+import RPi.GPIO
+
 
 class Controls:
+  DriverX = 0
+  DriverY = 0
+  DriverZ = 0
+  DriverOmega = 0
  def __init__(self):
-     print("Controls init-ed")
-
-
- def makeSteps(self, axis, steps, rotation):
+  print("Controls init-ed")
   DriverX = Driver(0,0,0)
-  
+  DriverY = Driver(0,0,0)
+  DriverZ = Driver(0,0,0)
+  DriverOmega = Driver(0,0,0)
+
+ def makeSteps(self, axis, steps, rotation):  
   if axis=="x":
-    print("driver1")
-    print(rotation)
-    DriverX.MakeStep(15,1)
-    #driver;
+    DriverX.MakeStep(steps,rotation)
+
+
   elif axis=="y":
-    print("driver2")
-    print(rotation)
-    #driver2
+    DriverY.MakeStep(steps,rotation)
+
+
   elif axis=="z":
-    print("driver3")
-    print(rotation)
-    #driver3 
+    DriverZ.MakeStep(steps,rotation)
+ return
+
 
 
 class Driver:
@@ -34,13 +39,27 @@ class Driver:
     makeStePin = MakeStepPin
     rotationPin = RotationPin
     resetComPin = ResetComPin
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(makeStePin, GPIO.OUT)
+    GPIO.setup(rotationPin, GPIO.OUT)
+    GPIO.setup(resetComPin, GPIO.IN)
  
  def MakeStep(self, Steps, Rotation):
     tempStepMem = Steps
     while(tempStepMem > 0):
-        #if(resetComPin = 0):
-        # step
-        print("making Step: " + str(tempStepMem))
+       if(GPIO.input(resetComPin) = 0):
+         if(Rotation == 1):
+           GPIO.output(rotationPin, GPIO.HIGH)
+         else:
+           GPIO.output(rotationPin, GPIO.LOW)
+        GPIO.output(makeStePin, GPIO.HIGH)
+        time.sleep(0.010)
+        GPIO.output(makeStePin, GPIO.LOW)
         tempStepMem-=1
+      time.sleep(0.010)
     return
+
+ def end(self):
+   GPIO.cleanup()
+
     
