@@ -1,13 +1,14 @@
 import time;
-import RPi.GPIO
+import RPi.GPIO as GPIO
 
 
 class Controls:
-  DriverX = 0
-  DriverY = 0
-  DriverZ = 0
-  DriverOmega = 0
+ DriverX = 0
+ DriverY = 0
+ DriverZ = 0
+ DriverOmega = 0
  def __init__(self):
+  GPIO.setwarnings(False) 
   print("Controls init-ed")
   DriverX = Driver(0,0,0)
   DriverY = Driver(0,0,0)
@@ -25,41 +26,50 @@ class Controls:
 
   elif axis=="z":
     DriverZ.MakeStep(steps,rotation)
- return
+  return
 
 
 
 class Driver:
- makeStepPin = 0
- rotationPin = 0
- resetComPin = 0
+ makeStepPin = None
+ rotationPin = None
+ resetComPin = None
 
  def __init__(self,MakeStepPin, RotationPin, ResetComPin):
+    global resetComPin, makeStepPin, rotationPin
+    GPIO.setwarnings(False) 
     print("Initializaiton driver")
-    makeStePin = MakeStepPin
+    makeStepPin = MakeStepPin
     rotationPin = RotationPin
     resetComPin = ResetComPin
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(makeStePin, GPIO.OUT)
+    GPIO.setup(makeStepPin, GPIO.OUT)
     GPIO.setup(rotationPin, GPIO.OUT)
     GPIO.setup(resetComPin, GPIO.IN)
- 
+    
  def MakeStep(self, Steps, Rotation):
-    tempStepMem = Steps
-    while(tempStepMem > 0):
-       if(GPIO.input(resetComPin) = 0):
-         if(Rotation == 1):
-           GPIO.output(rotationPin, GPIO.HIGH)
-         else:
-           GPIO.output(rotationPin, GPIO.LOW)
-        GPIO.output(makeStePin, GPIO.HIGH)
-        time.sleep(0.010)
-        GPIO.output(makeStePin, GPIO.LOW)
-        tempStepMem-=1
-      time.sleep(0.010)
-    return
+  tempStepMem = Steps
+  print(resetComPin)
+  print(makeStepPin)
+  while(tempStepMem > 0):
+   if(GPIO.input(resetComPin) == 0):
+    if(Rotation == 1):
+     GPIO.output(rotationPin, GPIO.HIGH)
+    else:
+     GPIO.output(rotationPin, GPIO.LOW)
+    GPIO.output(makeStepPin, GPIO.HIGH)
+    time.sleep(0.010)
+    GPIO.output(makeStepPin, GPIO.LOW)
+    tempStepMem-=1
+    print('step')
+   time.sleep(0.010)
+  return
 
  def end(self):
-   GPIO.cleanup()
+  print('end')
+  GPIO.cleanup()
 
+d = Driver(35,36,1);
+d.MakeStep(3,0)
+d.end();
     
