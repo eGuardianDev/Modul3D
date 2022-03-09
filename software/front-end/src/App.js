@@ -9,6 +9,7 @@ import './App.css';
 import Navigation from "./Elements/Navigation";
 import Home from './Elements/Home';
 import Controls from './Elements/Controls';
+import GCommands from './Elements/GCommands'
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home}/>
         <Route path="/controls" component={Controls}/>
-        <Route path="/printing" component={Controls}/>
+        <Route path="/gcommand" component={GCommands}/>
         <Route path="/camera" component={Controls}/>
         <Route path="/data" component={Controls}/>
       </Switch>

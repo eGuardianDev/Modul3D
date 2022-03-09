@@ -7,7 +7,7 @@ render(){
     <div className="NavigationClass">
     <Link to="/"><button >Home</button></Link> 
    <Link to="/controls"><button >Controls</button></Link> 
-    <button>Printing</button>
+   <Link to="/gcommand"><button >G-Code</button></Link> 
     <button>Camera</button>
     <button>Data</button>
     </div>
