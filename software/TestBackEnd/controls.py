@@ -1,5 +1,7 @@
+
+"""
 import time;
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 
 
 class Controls:
@@ -54,10 +56,12 @@ class Driver:
   while(tempStepMem > 0):
    if(GPIO.input(resetComPin) == 0):
     if(Rotation == 1):
+     print('a')
      GPIO.output(rotationPin, GPIO.HIGH)
     else:
      GPIO.output(rotationPin, GPIO.LOW)
-    GPIO.output(makeStepPin, GPIO.HIGH)
+     GPIO.output(makeStepPin, GPIO.HIGH)
+     print('a');
     time.sleep(0.010)
     GPIO.output(makeStepPin, GPIO.LOW)
     tempStepMem-=1
@@ -67,9 +71,10 @@ class Driver:
 
  def end(self):
   print('end')
-  GPIO.cleanup()
+#  GPIO.cleanup()
 
 d = Driver(35,36,1);
 d.MakeStep(3,0)
 d.end();
     
+"""

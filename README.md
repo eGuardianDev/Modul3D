@@ -12,8 +12,8 @@ Phase one -> 2D implementation
 - [X] Build first driver
 - [X] Test first driver
 - [ ] Implement server logic
-- [ ] Build second driver
-- [ ] Test second driver
+- [X] Build second driver
+- [X] Test second driver
 - [ ] Add first G-code implementations
 - [ ] Add drawing sharpie and test some G-code
 
@@ -21,13 +21,13 @@ Phase one -> 2D implementation
 Phase two -> 3D axis implementations
 - [ ] Build 3d Axis
   - [ ] Build driver
-  - [ ] Build hardware
+  - [X] Build hardware
   - [ ] Add bed
 
 ====
 Phase three -> Building modules
 - [ ] Build the modules
-  - [ ] Make the first module (Pen module)
+  - [X] Make the first module (Pen module)
   - [ ] Make the second module (3D-printing module)
   - [ ] Make the third module (C.N.C module)
 
