@@ -1,26 +1,28 @@
-# The idea
-#### I will try to create a 3D printer with diffrent modules that will allow it to 3d print / cnc cut / make pcbs and other things.
-#### You can check the progress below
+<h1 align="center">
+Modul3D
+</h1>
+
+#### I will try to create a machine with diffrent modules that will allow it to 3d print / cnc cut / make pcbs and other things.
+#### The system has custom stepper drivers that are open source and creaded by me. They still need some updates. 
 
 ## Current state
-#### I'm working on the driver for the stepper motor /It's almost done/. Back end and front end are currently under development.
-
+#### Most of the machine works, but there is only one module for drawing. Files can be uploaded and G-code can be send. The main computer still needs to be added and connected. The front end is ugly and doesn't scale well with phones.
 
 ## To do:
 ====
 Phase one -> 2D implementation
 - [X] Build first driver
 - [X] Test first driver
-- [ ] Implement server logic
+- [X] Implement server logic
 - [X] Build second driver
 - [X] Test second driver
-- [ ] Add first G-code implementations
+- [X] Add first G-code implementations
 - [ ] Add drawing sharpie and test some G-code
 
 ====
 Phase two -> 3D axis implementations
 - [ ] Build 3d Axis
-  - [ ] Build driver
+  - [X] Build driver
   - [X] Build hardware
   - [ ] Add bed
 
@@ -35,7 +37,25 @@ Phase three -> Building modules
 Phase four -> User experience
 - [ ] Back end
   - [ ] Implement more G-Code
-  - [ ] Add file upload
+  - [X] Add file upload
+  - [ ] Make Logs
 - [ ] Front end
-  - [ ] Add uploading files
-  - [ ] add camera
+  - [X] Add uploading files
+  - [ ] Add camera
+  - [ ] Last executed G-Code
+  - [ ] Logs
+
+---
+# Driver 
+=======
+#### Seprate "gates"
+#### Custom code with Atmega328 chip
+#### 4 pin communication -> 2 for stepping and rotation, 1 for grounding, 1 for communication
+====
+## To add:
+ - [ ] Making steps when starting Switch
+ - [ ] Full step or Half step mode Switch
+ - [ ] Slow stepping mode switch  
+ - [ ] Error Pin
+ - [ ] Spin Detection system
+ - [ ] Protective resistors
