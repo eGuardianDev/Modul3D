@@ -121,19 +121,23 @@ def hello():
 
 @app.route('/moveAxis', methods=['POST'])
 def moveAxis():
+ 
  data = request.json
  
+ if(workingStatus == Flase):
  # sends to the (controls.py) library which axis to controll
- #Controller.makeSteps(data["axis"],data["steps"],data["rotation"])
- 
- response = jsonify(status=0)
+  Controller.makeSteps(data["axis"],data["steps"],data["rotation"])
+  response = jsonify(status=0)
+ else:
+  response = jsonify(status=1)
+
  response.headers.add('Access-Control-Allow-Origin', '*')
  return response
 
 
 
 def StartServer():
- print("Done! - Starting Server")
+ print("Done! - Server Started")
  app.run(host="127.0.0.1",debug=False)
  #app.run()
  
