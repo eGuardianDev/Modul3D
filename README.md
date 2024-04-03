@@ -48,14 +48,4 @@ Phase four -> User experience
 ---
 # Driver 
 =======
-#### Seprate "gates"
-#### Custom code with Atmega328 chip
-#### 4 pin communication -> 2 for stepping and rotation, 1 for grounding, 1 for communication
-====
-## To add:
- - [ ] Making steps when starting Switch
- - [ ] Full step or Half step mode Switch
- - [ ] Slow stepping mode switch  
- - [ ] Error Pin
- - [ ] Spin Detection system
- - [ ] Protective resistors
+There is a seperate repo for  the stepper driver  [https://github.com/eGuardianDev/AtmegaStepperDriver](here).
