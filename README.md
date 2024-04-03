@@ -48,4 +48,4 @@ Phase four -> User experience
 ---
 # Driver 
 =======
-There is a seperate repo for  the stepper driver  [https://github.com/eGuardianDev/AtmegaStepperDriver](here).
+There is a seperate repo for  the stepper driver [here](https://github.com/eGuardianDev/atmegaStepperDriver).
